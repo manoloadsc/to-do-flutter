@@ -59,14 +59,17 @@ class _TodoListState extends State<TodoList> {
               child: ListView.builder(
                 itemCount: _tasks.length,
                 itemBuilder: (context, index) {
-                  return CheckboxListTile(
-                    title: Text(_tasks[index].name),
-                    value: _tasks[index].isCompleted,
-                    onChanged: (bool? value) {
-                      setState(() {
-                        _tasks[index].isCompleted = value!;
-                      });
-                    },
+                  return Container(
+                    color: Colors.yellow, // Define a cor amarela
+                    child: CheckboxListTile(
+                      title: Text(_tasks[index].name),
+                      value: _tasks[index].isCompleted,
+                      onChanged: (bool? value) {
+                        setState(() {
+                          _tasks[index].isCompleted = value!;
+                        });
+                      },
+                    ),
                   );
                 },
               ),
